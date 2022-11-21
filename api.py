@@ -18,8 +18,8 @@ class Client(object):
 		return "Client(id={})".format(self.id)
 
 clients = [
-	Client(1, "test01", "test1234"),
-	Client(2, "test02", "test6789"),
+	Client(1, "user1", "password1"),
+	Client(2, "user2", "password2"),
 ]
 
 #pprint(clients)
