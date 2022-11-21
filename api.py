@@ -3,9 +3,6 @@ from flask import Flask
 from flask_jwt import JWT, jwt_required, current_identity
 from gslothutils.safe_str_cmp import safe_str_cmp
 from gslothutils.log import log
-from gslothutils.pprint import pprint
-
-
 
 
 class Client(object):
@@ -21,8 +18,6 @@ clients = [
 	Client(1, "user1", "password1"),
 	Client(2, "user2", "password2"),
 ]
-
-#pprint(clients)
 
 username_table = {u.username: u for u in clients}
 userid_table = {u.id: u for u in clients}
@@ -56,9 +51,9 @@ jwt = JWT(app, authenticate, identity)
 @app.route("/hi",methods = ["POST", "GET"])
 @jwt_required()
 def hi():
-	log.debug(username_table)
-	log.debug(userid_table)
-	return "Hi, %s" % current_identity
+	#log.debug(username_table)
+	#log.debug(userid_table)
+	return ("Hi, {}".format(current_identity))
 	
 
 if __name__ == "__main__":
