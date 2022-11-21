@@ -1,0 +1,3 @@
+[submodule "gslothutils"]
+	path = gslothutils
+	url = https://github.com/geeksloth/gslothutils
